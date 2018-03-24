@@ -1,0 +1,34 @@
+extends /_chunk/_masterShell
+
+block head
+	title Narwhal Services
+
+block main
+
+	div
+		// 'pg' one - with menu
+		.ui
+			p
+			p
+			p
+			// MENU - nested
+			include /_chunk/_TopMenu
+			p
+			p
+			p
+			p
+			p
+
+		// ** content
+		.ui
+			include _form
+
+		hr
+
+		//FOOTER - nested
+		include /_chunk/_Footer
+
+block scripts
+	script.
+		console.log('tst')
+

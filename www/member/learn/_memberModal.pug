@@ -1,0 +1,36 @@
+#memberModal.ui.modal
+	.header Please register with your email.
+	.content
+		.description
+			.ui.header  Can we please have your email?
+			p.
+				We worked hard on this and would love to work with you.
+				
+			p We'd love to show you more.
+	.actions
+		#nopeB.ui.black.deny.button
+			| Nope, Home page
+		#okSignupB.ui.positive.right.labeled.icon.button
+			| OK, Signup Page
+
+script.
+	function showMemberModal() {
+		$('#nopeB').click(function(){
+			window.location.href = '/'
+		})
+		$('#okSignupB').click(function(){
+			window.location.href = '/register/getStarted'
+		})
+		$('#memberModal').modal('show')
+	}
+	loadjs('/zmodel/setupModel.js')
+	loadjs.ready(['sema', 'ModelB'], function() { 
+		console.log('member bundle')
+
+		User.isAuthenticated().then(function(auth){
+			console.log(auth)
+			if(!auth) showMemberModal()
+		}).catch(function(err) {
+			showMemberModal()
+		})
+	})

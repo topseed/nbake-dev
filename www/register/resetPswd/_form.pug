@@ -1,0 +1,71 @@
+
+
+// join form 
+.ui.raised.very.padded.text.container.segment
+
+	form.grid-form
+		fieldset
+			legend Password Reset:
+			div(data-row-span='2')
+				div(data-field-span='2')
+					label Enter email
+					input#email(type='text', autofocus='', autocomplete='new-password' )
+			p
+			div
+				#intro.ui.message.
+					Click 'Reset' to change your password.
+			div
+				#ok.ui.message.
+					A validation email was just sent to the provided email. 
+					You'll need the code on the sent email to continue.
+			p
+			button#resetB.ui.button.primary Reset
+
+script.
+	loadjs.ready('PRELoadB', function() {
+		console.log('form')
+		loadjs(['/assets/gridforms/gridforms.css'
+				,'/assets/gridforms/gridforms.js'])
+
+		PAGEinitial()
+
+		loadjs('/zmodel/setupModel.js')
+		loadjs.ready('ModelB', function() { // bundle
+			setupBut()
+		})
+
+	})//ready
+
+	function setupBut() {
+		console.log('buts')
+
+		$( '#resetB' ).click(function(e) {
+			e.preventDefault()
+
+			var email = $('#email').val()
+			User.requestPswdReset(email)
+			User.emailSet(email)
+
+			PAGEOK()
+		})// on click
+
+	}//setup()
+
+	//page UI states
+	function PAGEinitial() {
+		$('#intro').show()
+		$( '#ok' ).hide()
+	}
+	function PAGEOK() {
+		console.log('ok')
+		$('#intro').hide()
+		$( '#ok' ).show()
+		User.emailSet($('#email').val())
+		$('#pswd').val('')
+		setTimeout(function(){
+			window.location.href = '/register/resetValidate'
+		}, ux.time)
+	}
+
+
+

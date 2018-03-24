@@ -1,0 +1,92 @@
+
+
+// join form 
+.ui.raised.very.padded.text.container.segment
+
+	form.grid-form
+		fieldset
+			legend A code was sent to you email, lets validate:
+			div(data-row-span='2')
+				div(data-field-span='2')
+					label Enter code
+					input#code(type='text', autofocus='', autocomplete='new-password' )
+			p
+			div
+				#intro.ui.message.
+					Thank you for your information, we will keep it safe. 
+					A validation email was just sent to the provided email. 
+					You'll need to the code in the sent email to continue.
+			div
+				#err.ui.error.message
+			div
+				#ok.ui.message.
+					OK, lets try to log in; and get to your member page.
+			p
+			button#valB.ui.button.primary Validate
+
+script.
+	loadjs.ready('PRELoadB', function() {
+		console.log('form')
+		loadjs(['/assets/gridforms/gridforms.css'
+				,'/assets/gridforms/gridforms.js'])
+
+		PAGEinitial()
+
+		loadjs('/zmodel/setupModel.js')
+		loadjs.ready('ModelB', function() { // bundle
+			setupBut()
+		})
+
+	})//ready
+
+	function setupBut() {
+		console.log('buts')
+		var email = User.emailGet()
+		console.log(email) 
+
+		$( '#valB' ).click(function(e) {
+			e.preventDefault()
+			PAGEtry()
+			var code = $('#code').val()
+
+			User.confirmCode(email, code).then(function(val) {
+				console.log(val)
+				PAGEOK()
+
+			}).catch(function(err) {
+				console.log(err)
+				PAGEerror(err.message)
+			})
+		
+		})// on click
+
+	}//setup()
+
+	//page UI states
+	function PAGEinitial() {
+		$('#intro').show()
+		$( '#ok' ).hide()
+		$( '#err' ).hide()
+	}
+	function PAGEOK() {
+		console.log('ok')
+		$('#intro').hide()
+		$( '#ok' ).show()
+		$( '#err' ).hide()
+		$('#pswd').val('')
+		setTimeout(function(){
+			window.location.href = '/register/login'
+		}, ux.time)
+	}
+	function PAGEerror(err) {
+		$('#intro').show()
+		$( '#ok' ).hide()
+		$( '#err' ).text(err)
+		$( '#err' ).show()
+		$('#pswd').val('')
+	}
+	function PAGEtry(err) {
+		$( '#err' ).hide()
+		$( '#err' ).text('')
+	}
+

@@ -1,0 +1,80 @@
+
+// Top Menu
+//.vertical.masthead.center.aligned
+.ui.inverted.menu
+	a.toc.item
+		i.sidebar.icon
+	.header.item Narwhal Hosting
+	a.active.item(href='/home') Home
+	a.item(href='/page/solution') Solution
+	a.item(href='/page/pricing') Pricing
+	a.item(href='/member/learn') Learn	
+	a.item(href='/member/tryInstall')  Try it	
+	a#MmemberHome.item(href='/register/memberHome') Member
+	a.item(href='/home') About
+
+	.right.menu
+		.item
+			a#Mlogin.ui.inverted.button Log In
+			a#MlogOut.ui.inverted.button Log Out
+			a#MsignUp.ui.inverted.button Sign Up
+
+script.
+
+	loadjs.ready('PRELoadB', function(){
+		console.log('init site')
+		SITEinit()
+		setupSiteBut()
+		window.SITE.add(onUserAuthEvent)
+	})
+	function onUserAuthEvent(auth) {
+		if(auth)
+		SITElogedIn()
+		else SITEinit()
+	}
+	function logout() {
+		try{// maybe not even loaded
+			User.logout()
+		} catch(err) {console.log(err)}
+	}
+	function setupSiteBut() {
+		console.log('site buts')
+		$( '#MlogOut' ).click(function(e) {
+			e.preventDefault()
+			logout()
+			window.location.href = '/'
+		})
+		$( '#Mlogin' ).click(function(e) {
+			e.preventDefault()
+			logout()
+			window.location.href = '/register/login'
+		})
+		$( '#MsignUp' ).click(function(e) {
+			e.preventDefault()
+			logout()
+			window.location.href = '/register/getStarted'
+		})
+	}
+
+	var route = Object.create(null)//routes
+	route.join = ''
+
+	var ux =  Object.create(null)
+	ux.time = 1000
+
+	//site  UI states
+	function SITEinit() { //   hide member page
+		$('#Mlogin').show()
+		$('#MlogOut').hide()
+		$('#MsignUp').show()
+		
+		$('#MmemberHome').hide()
+	}
+	function SITElogedIn() {// show member page, logout
+		$('#Mlogin').hide()
+		$('#MlogOut').show()
+		$('#MsignUp').hide()
+		
+		$('#MmemberHome').show()
+	}
+

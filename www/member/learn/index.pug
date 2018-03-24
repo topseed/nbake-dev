@@ -1,0 +1,27 @@
+extends /_chunk/_masterShell
+
+block head
+	title Narwhal Services
+
+block main
+	style.
+		.md {
+			margin: 2rem ;
+		}
+	
+	// 'pg' one - with menu
+	.ui
+		// MENU - nested
+		include /_chunk/_TopMenu
+
+		// * content
+		.ui.md
+			include:marked outline.md
+
+	//FOOTER - nested
+	include /_chunk/_Footer
+	include _memberModal
+
+block scripts
+	script.
+		console.log('pg')

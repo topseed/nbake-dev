@@ -1,0 +1,85 @@
+
+
+//loginForm 
+.ui.raised.very.padded.text.container.segment
+
+	form.grid-form
+		fieldset
+			legend Login:
+			div(data-row-span='2')
+				div(data-field-span='2')
+					label Email
+					input#email(type='text', autocomplete='new-password', autofocus='')
+			div(data-row-span='2')
+				div(data-field-span='2')
+					label Password
+					input#pswd(type='password', autocomplete='new-password' )
+			p
+			div
+				#err.ui.error.message
+			p
+			button#loginB.ui.button.primary Log in
+			button#resetB.ui.button Reset Password
+
+script.
+	loadjs.ready('PRELoadB', function() {
+		console.log('form')
+		loadjs(['/assets/gridforms/gridforms.css'
+				,'/assets/gridforms/gridforms.js'])
+
+		PAGEinitial()
+
+		loadjs('/zmodel/setupModel.js')
+		loadjs.ready('ModelB', function() { // bundle
+			setupBut()
+		})
+	})//ready
+
+	function setupBut() {
+		console.log('buts')
+		// loading class
+		$( '#loginB' ).click(function(e) {
+			e.preventDefault()
+			PAGEtry()
+			var email = $('#email').val()
+			var pswd = $('#pswd').val()
+			User.authenticate(email,pswd).then(function(val) {
+				console.log(val)
+				User.emailSet(email)
+
+				PAGEOK()
+			}).catch(function(err) {
+				console.log(err)
+				PAGEerror(err.message)
+			})
+		})// on click login
+
+		$( '#resetB' ).click(function(e) {
+			e.preventDefault()
+			window.location.href = '/register/resetPswd'
+		})
+
+	}//setup()
+
+	//page UI states
+	function PAGEinitial() {
+		$( '#err' ).hide()
+	}
+	function PAGEOK() {
+		console.log('ok')
+		$( '#err' ).hide()
+		$('#pswd').val('')
+		setTimeout(function(){
+			window.location.href = '/register/memberHome'
+		}, ux.time)
+	}
+	function PAGEerror(err) {
+		$( '#err' ).text(err)
+		$( '#err' ).show()
+		$('#pswd').val('')
+	}
+	function PAGEtry(err) {
+		$( '#err' ).hide()
+		$( '#err' ).text('')
+	}
+

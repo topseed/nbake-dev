@@ -1,0 +1,49 @@
+doctype html
+html
+	head
+		include _topHead
+		block head
+
+		// ha ha !!:
+		style.
+			html { visibility: hidden; }
+
+	body
+		script(src='//cdn.jsdelivr.net/npm/loadjs@3.5.2/dist/loadjs.js')
+
+		//side menu shell
+		include _topAndSide
+		//container
+		.pusher
+
+			// pushed state
+			block main
+
+		script(src='/_chunk/setup.js')
+		script.
+			console.log('shell')
+
+			loadjs.ready('PRELoadB', function() {
+				console.log('loaded setup') // dependencies 
+				loadjs([
+					'//cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/semantic.css'
+					,'//cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/semantic.js'
+					], 'sema', {  
+						success: function() {
+							// create sidebar and attach to menu open
+							$('.ui.sidebar').sidebar('attach events', '.toc.item')
+							setTimeout(function () { // ha ha !!:
+								document.getElementsByTagName('html')[0].style.visibility = 'visible'
+								console.log('style ready')
+							}, 10)
+						}
+					})
+				//js
+				 WebFont.load({	google: {
+						families: ['Open Sans:300']
+					}
+				})//wf	
+			})//ready
+
+		//pg scripts
+		block scripts

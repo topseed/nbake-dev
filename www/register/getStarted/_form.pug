@@ -1,0 +1,95 @@
+
+
+// join form 
+.ui.raised.very.padded.text.container.segment
+
+	form.grid-form
+		fieldset
+			legend Sign up as first step:
+			div(data-row-span='2')
+				div(data-field-span='2')
+					label Email
+					input#email(type='text', autofocus='', autocomplete='new-password' )
+			div(data-row-span='2')
+				div(data-field-span='2')
+					label Your name
+					input#name(type='text', autocomplete='new-password' )
+			div(data-row-span='2')
+				div(data-field-span='2')
+					label Password
+					input#pswd(type='password', autocomplete='new-password' )
+			p
+			div
+				#intro.ui.message.
+					Please share your email, name and set a passssword. 
+					You'll need to contact our general support if you can't sign up.
+			div
+				#err.ui.error.message
+			div
+				#ok.ui.message.
+					Thank you for your information, we will keep it safe.
+					A validation email was just sent to the provided email. 
+			p
+			button#joinB.ui.button.primary Join
+
+script.
+	loadjs.ready('PRELoadB', function() {
+		console.log('form')
+		loadjs(['/assets/gridforms/gridforms.css'
+				,'/assets/gridforms/gridforms.js'])
+		PAGEinitial()
+		loadjs('/zmodel/setupModel.js')
+		loadjs.ready('ModelB', function() { // bundle
+			setupBut()
+		})
+
+	})//ready
+
+	function setupBut() {
+		console.log('buts')
+		$( '#joinB' ).click(function(e) {
+			e.preventDefault()
+			PAGEtry()
+			var email = $('#email').val()
+			var name = $('#name').val()
+			var pswd = $('#pswd').val()
+
+			User.signUp(name, email, pswd).then(function(val) {
+				console.log(val)
+				PAGEOK()
+
+			}).catch(function(err) {
+				console.log(err)
+				PAGEerror(err.message)
+			})
+		})// on click
+	}//setup()
+
+	//page UI states
+	function PAGEinitial() {
+		$('#intro').show()
+		$( '#ok' ).hide()
+		$( '#err' ).hide()
+	}
+	function PAGEOK() {
+		console.log('ok')
+		$('#intro').hide()
+		$( '#ok' ).show()
+		$( '#err' ).hide()
+		User.emailSet($('#email').val())
+		$('#pswd').val('')
+		setTimeout(function(){
+			window.location.href = '/register/joinValidate'
+		}, ux.time)
+	}
+	function PAGEerror(err) {
+		$('#intro').hide()
+		$( '#ok' ).hide()
+		$( '#err' ).text(err)
+		$( '#err' ).show()
+		$('#pswd').val('')
+	}
+	function PAGEtry(err) {
+		$( '#err' ).hide()
+		$( '#err' ).text('')
+	}
