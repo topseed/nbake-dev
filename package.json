@@ -12,11 +12,10 @@
     "gulp": "^3.9.1",
     "gulp-debug": "^3.2.0",
     "gulp-less": "^3.4.0",
-    "gulp-pug": "^3.3.0",
-    "gulp-rename": "^1.2.2",
+
+	 "gulp-rename": "^1.2.2",
     "gulp-typescript": "^4.0.1",
-    "jstransformer": "^1.0.0",
-    "jstransformer-marked": "^1.0.3",
+
     "less-plugin-autoprefix": "^1.5.1",
     "typescript": "^2.7.1"
   }
