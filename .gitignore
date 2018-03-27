@@ -25,6 +25,8 @@
 !**/*.png
 !**/*.jpg
 
+!**/*.info
+
 
 #other includes:
 
