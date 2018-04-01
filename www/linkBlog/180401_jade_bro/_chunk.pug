@@ -1,29 +1,36 @@
 
+.item
+	h3#date1 {{=it.dateX}}
+	h2.
+		#{title}
+	h4.
+		#{author}
 
-h2#date1 {{=it.dateX}}
+	img(src= media_url, height='160')
 
-p.
+	p.
+		#{description}
 
-	#{title}
-	#{sourceUrl}
-	#{media_url}
-	#{author}
-	#{description}
+
+	p.
+		#{sourceUrl}
+		#{media_url}
+		#{author}
 
 
 script.
 	var cur = '#{id}'
 	console.log(cur)
 
+	var media_url = '#{media_url}'
+	console.log(media_url)
+
 	loadjs.ready('dbind', function() {
-
+		// show the date
 		var local = moment.unix(#{updated}).local()
-		var dat = local.format('MMMM Do YYYY Z')
-
+		var dat = local.format('MMMM Do YYYY') // Z
 		console.log(dat)
-
 		bind('date1', 'dateX', dat)
-
 	})
 
 	function bind(eID, field, value) {
