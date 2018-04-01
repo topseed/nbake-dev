@@ -1,0 +1,42 @@
+
+
+h2#date1 {{=it.dateX}}
+
+p.
+
+	#{title}
+	#{sourceUrl}
+	#{media_url}
+	#{author}
+	#{description}
+
+
+script.
+	var cur = '#{id}'
+	console.log(cur)
+
+	loadjs.ready('dbind', function() {
+
+		var local = moment.unix(#{updated}).local()
+		var dat = local.format('MMMM Do YYYY Z')
+
+		console.log(dat)
+
+		bind('date1', 'dateX', dat)
+
+	})
+
+	function bind(eID, field, value) {
+		let tmpl = document.getElementById(eID)
+		let doIt = doT.template(tmpl.innerHTML)
+		let bind = new Object()
+		bind[field] = value
+		let res = doIt(bind)
+		tmpl.innerHTML=res
+	}
+
+	loadjs.ready('PRELoadB', function() {
+		loadjs(['//cdn.jsdelivr.net/npm/moment@2.22.0/min/moment.min.js'
+		, '//cdn.jsdelivr.net/npm/dot@1.1.2/doT.min.js'
+		],'dbind')
+	})
