@@ -1,29 +1,21 @@
 
 .item
-	h3#date1 {{=it.dateX}}
-	h2.
-		#{title}
-	h4.
-		#{author}
+	h2 #{title}
+	h4 #{author}
+		#date1 {{=it.dateX}}
 
 	img(src= media_url, height='160')
 
-	p.
-		#{description}
+	div #{description}
+	a(href=sourceUrl, target='_blank') Click for more ...
 
-
-	p.
-		#{sourceUrl}
-		#{media_url}
-		#{author}
+	p
+	p
 
 
 script.
 	var cur = '#{id}'
 	console.log(cur)
-
-	var media_url = '#{media_url}'
-	console.log(media_url)
 
 	loadjs.ready('dbind', function() {
 		// show the date
