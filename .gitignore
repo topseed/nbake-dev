@@ -28,6 +28,8 @@
 !**/*.info
 !**/*.yaml
 
+!**/*.json
+
 
 #other includes:
 
