@@ -1,24 +1,38 @@
 
+p oh hi
 
-
+#pgs
+	#pg
 
 script.
-
-
 	loadjs.ready('dbind', function() {
+		console.log('dbind')
 
-		$('#demo').pagination({
-			dataSource: [1, 2, 3, 4, 5, 6, 7, ... , 195],
+		$('#pgs').pagination({
+			dataSource: [1, 2, 3, 4, 5, 6, 7],
 			callback: function(data, pagination) {
-				// template method of yourself
-				var html = template(data)
 
-				dataContainer.html(html)
+				var html = simpleTemplating(data)
 
-				}
+				$('#pg').html(html)
+				console.log(pagination)
+			}//cb
 		})
 
+
+		function simpleTemplating(data) {
+			var html = '<ul>';
+			$.each(data, function(index, item){
+				html += '<li>'+ item +'</li>';
+			});
+			html += '</ul>';
+			return html;
+		}
+
 	})//ready
+
+
+
 
 	function bind(eID, field, value) {
 
