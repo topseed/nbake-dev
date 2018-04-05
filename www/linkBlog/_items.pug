@@ -4,19 +4,33 @@ p oh hi
 #pgs
 	#pg
 
-
 template#tmpl1
 	ul
 		| {{#.}}
-		li {{.}}
+		li.
+			{{title}}
+			{{content_text}}
 		| {{/.}}
 
 script.
-	loadjs.ready('dbind', function() {
+
+	loadjs.ready('PRELoadB', function() { // wait for fetch to be loaded
+
+		fetch('items.json').then(function(resp) {
+			return resp.json()
+		}).then(function(obj) {
+			feed = obj
+			loadjs.done('feed')
+		})
+
+	})
+
+	// loaded lib and got data
+	loadjs.ready(['dbind','feed'], function() {
 		console.log('dbind')
 
 		$('#pgs').pagination({
-			dataSource: [1, 2, 3, 4, 5, 6],
+			dataSource: feed.items,
 			pageSize: 3,
 			showPageNumbers: false,
 			showNavigator: true,
