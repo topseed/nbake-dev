@@ -38,9 +38,11 @@ script.
 	})//ready
 
 	loadjs.ready('PRELoadB', function() {
-		loadjs(['//cdn.jsdelivr.net/npm/moment@2.22.0/min/moment.min.js'
-		,'//cdn.jsdelivr.net/npm/riot@3.9.1/riot.js'
+		loadjs([
+			'//cdn.jsdelivr.net/npm/moment@2.22.0/min/moment.min.js'
+		, '//cdn.jsdelivr.net/npm/riot@3.9.1/riot.js'
 		, 'items-tag.js'
+		, '//cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js'
 		, '//cdn.jsdelivr.net/npm/paginationjs@2.1.2/dist/pagination.min.js'
 		, '//cdn.jsdelivr.net/npm/paginationjs@2.1.2/dist/pagination.css'
 		],'dbind', {

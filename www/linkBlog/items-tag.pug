@@ -1,17 +1,16 @@
 items-tag
-	.ui.cards
-		<virtual each={ items}>
+	<virtual each={ items}>
 
-			.card
+		a(href= '{ external_url}')
+			.ui.card
 				image
-					img(src= '{ image }' , width='160')
+					img(src= '{ image}' , width='160')
 				.content
 					.header { title}
 					.meta { author}
 					.description { content_text}
-
-		</virtual>
-
+		p
+	</virtual>
 	p
 	p
 
