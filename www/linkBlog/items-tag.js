@@ -1,5 +1,5 @@
 
-riot.tag2('items-tag', '<p>in tag</p><ul> <li each="{items}"> {title}</li> </ul>', '', '', function(opts) {
+riot.tag2('items-tag', '<p>in tag</p><virtual each="{items}"> <p>{title} {content_text}</p></virtual>', '', '', function(opts) {
     console.log('items tag')
     this.items = []
 
@@ -8,5 +8,4 @@ riot.tag2('items-tag', '<p>in tag</p><ul> <li each="{items}"> {title}</li> </ul>
     	this.items = args
     	this.update()
     }.bind(this)
-
 });

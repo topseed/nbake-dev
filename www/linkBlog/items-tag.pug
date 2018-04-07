@@ -1,19 +1,19 @@
 items-tag
 	p in tag
-	<ul>
-		<li each={ items }> { title }</li>
-	</ul>
 
+	<virtual each={ items}>
+		p { title}
+		br { content_text}
+	</virtual>
 
 	script.
 		console.log('items tag')
 		this.items = []
 
-		 renderItems(args) { //called by page
-			console.log('XXX '+ JSON.stringify(args[0]))
+		 renderItems(args) { //called by page on new data
+			console.log('first row '+ JSON.stringify(args[0]))
 			this.items = args
 			this.update()
 		}
 
 
-// {{content_text}}
