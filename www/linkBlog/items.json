@@ -8,22 +8,22 @@
       "id": "3d87815a-aa49-40e6-a2f9-f78c626029b8",
       "external_url": "http://youtube.com/watch?v=wzAWI9h3q18",
       "title": "Do you Even Pug (Jade) bro?",
-      "image": "pug.jpg",
+      "image": "/linkBlog/180401b_jade_bro/pug.jpg",
       "content_text": "An introduction to Pug(Jade) by Google Designer Travis Neilson. We take an intro look at Jade (now called Pug v1 ), a templating language that is completely awesome and has changed my life.",
       "author": "Travis Neilson",
       "date_modified": 1522597131,
       "tags": null,
-      "url": "www."
+      "url": "180401b_jade_bro"
     },
     {
       "id": "28713ee7-c49f-476e-a395-50b5e74ec5ee",
       "external_ur": "http://awwwards.com/collections",
       "title": "Web Design Trends",
-      "image": "aw.jpg",
+      "image": "/linkBlog/180401d_awwwards/aw.jpg",
       "content_text": "The awards for design, creativity and innovation on the Internet. Awwwards are the Website Awards that recognize and promote the talent and effort of the best developers, designers and web agencies in the world.",
       "author": "awwwards.com",
       "date_modified": 1522597132,
-      "url": "www."
+      "url": "180401b_jade_bro"
     },
     {
       "id": "211d6fcb-932a-48e0-81cb-e40a37c0f417",
@@ -34,7 +34,7 @@
       "author": "chris coyier",
       "date_modified": 1522799218,
       "tags": null,
-      "url": "www."
+      "url": "180403a_chriscoyier"
     },
     {
       "id": "a31fc60c-1ca9-4b3a-84a3-86285a46f1cf",
@@ -45,7 +45,7 @@
       "author": "crna cura",
       "date_modified": 1522799220,
       "tags": null,
-      "url": "www."
+      "url": "180403b_mary_lou"
     },
     {
       "id": "f08e7360-d408-41f2-8c1b-12e80d6cf6c6",
@@ -56,7 +56,7 @@
       "author": "webbyawards",
       "date_modified": 1522597134,
       "tags": null,
-      "url": "www."
+      "url": "180403c_webbyawards"
     },
     {
       "id": "34d8c130-f22f-4045-94fa-5f2e00fc1f04",
@@ -67,7 +67,7 @@
       "author": "favorite website awards",
       "date_modified": 1522597140,
       "tags": null,
-      "url": "www."
+      "url": "180403d_fwa"
     }
   ]
 }
