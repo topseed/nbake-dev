@@ -1,7 +1,7 @@
 items-tag
 	p in tag
 	<ul>
-		<li each={ item in items }> { item.title }</li>
+		<li each={ items }> { title }</li>
 	</ul>
 
 
@@ -16,10 +16,4 @@ items-tag
 		}
 
 
-//template#tmpl1
-	ul
-		| {{#.}}
-		li.
-			{{title}}
-			{{content_text}}
-		| {{/.}}
+// {{content_text}}

@@ -30,6 +30,8 @@
 
 !**/*.json
 
+!**/*.js
+
 
 #other includes:
 
