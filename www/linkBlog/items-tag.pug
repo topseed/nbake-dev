@@ -1,11 +1,18 @@
 items-tag
-	p test { value }
+	p in tag
+	<ul>
+		<li each={ item in items }> { item.title }</li>
+	</ul>
+
 
 	script.
-		console.log('items pug')
+		console.log('items tag')
+		this.items = []
 
-		 renderItems(data) {
-			console.log('XXX '+ data)
+		 renderItems(args) { //called by page
+			console.log('XXX '+ JSON.stringify(args[0]))
+			this.items = args
+			this.update()
 		}
 
 

@@ -5,7 +5,6 @@
   "version": 1,
   "items": [
     {
-      "basedir": "\\Users\\uptim\\Documents\\GitHub\\topseed-dev\\www",
       "id": "3d87815a-aa49-40e6-a2f9-f78c626029b8",
       "external_url": "http://youtube.com/watch?v=wzAWI9h3q18",
       "title": "Do you Even Pug (Jade) bro?",
@@ -17,7 +16,6 @@
       "url": "www."
     },
     {
-      "basedir": "\\Users\\uptim\\Documents\\GitHub\\topseed-dev\\www",
       "id": "28713ee7-c49f-476e-a395-50b5e74ec5ee",
       "external_ur": "http://awwwards.com/collections",
       "title": "Web Design Trends",
@@ -28,7 +26,6 @@
       "url": "www."
     },
     {
-      "basedir": "\\Users\\uptim\\Documents\\GitHub\\topseed-dev\\www",
       "id": "211d6fcb-932a-48e0-81cb-e40a37c0f417",
       "external_url": "http://twitter.com/chriscoyier",
       "title": "chris coyier",
@@ -40,7 +37,6 @@
       "url": "www."
     },
     {
-      "basedir": "\\Users\\uptim\\Documents\\GitHub\\topseed-dev\\www",
       "id": "a31fc60c-1ca9-4b3a-84a3-86285a46f1cf",
       "external_url": "http://tympanus.net/codrops/author/crnacura/",
       "title": "Manoela",
@@ -52,7 +48,6 @@
       "url": "www."
     },
     {
-      "basedir": "\\Users\\uptim\\Documents\\GitHub\\topseed-dev\\www",
       "id": "f08e7360-d408-41f2-8c1b-12e80d6cf6c6",
       "external_url": "http://www.webbyawards.com/winners/2017/websites/website-features-and-design/best-visual-design-aesthetic/",
       "title": "WEBBY AWARDS IS AN INTERNATIONAL AWARD",
@@ -64,7 +59,6 @@
       "url": "www."
     },
     {
-      "basedir": "\\Users\\uptim\\Documents\\GitHub\\topseed-dev\\www",
       "id": "34d8c130-f22f-4045-94fa-5f2e00fc1f04",
       "external_url": "https://twitter.com/fwa",
       "title": "The FWA - showcasing innovation",
