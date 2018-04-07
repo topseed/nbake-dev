@@ -2,36 +2,23 @@
 p oh hi
 
 #pgs
-	#pg
-
-
-items-tag
-
-
-template#tmpl1
-	ul
-		| {{#.}}
-		li.
-			{{title}}
-			{{content_text}}
-		| {{/.}}
+	items-tag
 
 script.
-
 	loadjs.ready('PRELoadB', function() { // wait for fetch to be loaded
-
 		fetch('items.json').then(function(resp) {
 			return resp.json()
 		}).then(function(obj) {
-			feed = obj
+			feed = obj //data
 			loadjs.done('feed')
 		})
-
-	})
+	})// fetch data
 
 	// loaded lib and got data
 	loadjs.ready(['dbind','feed'], function() {
 		console.log('dbind')
+
+		let itemsTag = riot.mount('items-tag')[0] // the first tag
 
 		$('#pgs').pagination({
 			dataSource: feed.items,
@@ -40,23 +27,18 @@ script.
 			showNavigator: true,
 
 			callback: function(data, pagination) {
-				console.log(data)
-
-				lateBind($('#tmpl1'), data, $('#pg'))
-
+				itemsTag.renderItems(data)
 			}//cb
 		})
-
 	})//ready
-
-	function lateBind($tmpl, data, $el) {
-		console.log(data)
-	}
 
 	loadjs.ready('PRELoadB', function() {
 		loadjs(['//cdn.jsdelivr.net/npm/moment@2.22.0/min/moment.min.js'
 		,'//cdn.jsdelivr.net/npm/riot@3.9.1/riot.js'
+		, 'items-tag.js'
 		, '//cdn.jsdelivr.net/npm/paginationjs@2.1.2/dist/pagination.min.js'
 		, '//cdn.jsdelivr.net/npm/paginationjs@2.1.2/dist/pagination.css'
-		],'dbind')
-	})
+		],'dbind', {
+			async: false
+		})//load js
+	})//ready

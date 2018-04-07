@@ -3,3 +3,16 @@ items-tag
 
 	script.
 		console.log('items pug')
+
+		 renderItems(data) {
+			console.log('XXX '+ data)
+		}
+
+
+//template#tmpl1
+	ul
+		| {{#.}}
+		li.
+			{{title}}
+			{{content_text}}
+		| {{/.}}
