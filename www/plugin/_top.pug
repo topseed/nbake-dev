@@ -13,11 +13,16 @@
 	.ui.container
 		a.toc.item
 			i.sidebar.icon
-		a.header.item(href='/page/one')
-			//-img.logo(src='/assets/images/logo.svg')
-			//-| &nbsp;
-			| One
-		a.item.computer_only(href='/page/two') Two
+		.item Narwhal
+
+		a.active.item(href='/home') Home
+		a.item(href='/page/solution') Solution
+		a.item(href='/page/pricing') Pricing
+		a.item(href='/member/learn') Learn
+		a.item(href='/member/tryInstall')  Try it
+		a#MmemberHome.item(href='/register/memberHome') Member
+		a.item(href='/home') About
+
 	.right.menu
 		#rightItem.item
 			.ui.buttons
@@ -30,8 +35,8 @@ style.
 		letter-spacing: .05em !important;
 	}
 
-	#rightItem {
-		margin-right: 1.25em;
+	#rightItem, #MsignUp {
+		margin-right: 2em;
 	}
 
 
@@ -49,41 +54,3 @@ style.
 		}
 	}
 
-// left
-//.ui.fixed.vertical.inverted.sidebar.menu
-	a.active.item(href='/page/one')
-		i.left.icon.star
-		| One1
-	a.item(href='/page/two')
-		i.left.icon.book
-		| Two
-
-// top
-//#topMenu.ui.pointing.inverted.menu
-	a.toc.item
-		i.sidebar.icon.bars
-	.item Narwhal
-	a.item.active(href='/page/one') Home
-	a.item
-		| Messages
-	a.item
-		| Friends
-
-	.right.menu
-
-
-//.ui.inverted.menu
-	a.active.item(href='/home') Home
-	a.item(href='/page/solution') Solution
-	a.item(href='/page/pricing') Pricing
-	a.item(href='/member/learn') Learn
-	a.item(href='/member/tryInstall')  Try it
-	a#MmemberHome.item(href='/register/memberHome') Member
-	a.item(href='/home') About
-
-//style.
-	#topMenu {
-		margin: 0;
-		border-radius: 0;
-
-	}
