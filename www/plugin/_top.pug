@@ -1,0 +1,38 @@
+// left
+.ui.fixed.vertical.inverted.sidebar.menu
+	a.active.item(href='/page/one')
+		i.left.icon.star
+		| One1
+	a.item(href='/page/two')
+		i.left.icon.book
+		| Two
+
+// top
+.ui.fixed.inverted.menu
+	.ui.container
+		a.toc.item
+			i.sidebar.icon
+		.header.item Narwhal Hosting
+		a.header.item(href='/page/one')
+			//-img.logo(src='/assets/images/logo.svg')
+			//-| &nbsp;
+			| Onex
+		a.item.computer_only(href='/page/two') Two
+
+
+	.right.menu
+		a.item#Mlogin.ui.inverted.button Log In
+		a.item#MlogOut.ui.inverted.button Log Out
+		a.item#MsignUp.ui.inverted.button Sign Up
+
+
+
+
+//.ui.inverted.menu
+	a.active.item(href='/home') Home
+	a.item(href='/page/solution') Solution
+	a.item(href='/page/pricing') Pricing
+	a.item(href='/member/learn') Learn
+	a.item(href='/member/tryInstall')  Try it
+	a#MmemberHome.item(href='/register/memberHome') Member
+	a.item(href='/home') About

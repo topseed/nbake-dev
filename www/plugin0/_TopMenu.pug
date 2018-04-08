@@ -1,0 +1,60 @@
+
+script.
+
+	loadjs.ready('PRELoadB', function(){
+		console.log('init site')
+		SITEinit()
+		setupSiteBut()
+		window.SITE.add(onUserAuthEvent)
+	})
+	function onUserAuthEvent(auth) {
+		if(auth)
+		SITElogedIn()
+		else SITEinit()
+	}
+	function logout() {
+		try{// maybe not even loaded
+			User.logout()
+		} catch(err) {console.log(err)}
+	}
+	function setupSiteBut() {
+		console.log('site buts')
+		$( '#MlogOut' ).click(function(e) {
+			e.preventDefault()
+			logout()
+			window.location.href = '/'
+		})
+		$( '#Mlogin' ).click(function(e) {
+			e.preventDefault()
+			logout()
+			window.location.href = '/register/login'
+		})
+		$( '#MsignUp' ).click(function(e) {
+			e.preventDefault()
+			logout()
+			window.location.href = '/register/getStarted'
+		})
+	}
+
+	var route = Object.create(null)//routes
+	route.join = ''
+
+	var ux =  Object.create(null)
+	ux.time = 1000
+
+	//site  UI states
+	function SITEinit() { //   hide member page
+		$('#Mlogin').show()
+		$('#MlogOut').hide()
+		$('#MsignUp').show()
+
+		$('#MmemberHome').hide()
+	}
+	function SITElogedIn() {// show member page, logout
+		$('#Mlogin').hide()
+		$('#MlogOut').show()
+		$('#MsignUp').hide()
+
+		$('#MmemberHome').show()
+	}
+
