@@ -1,5 +1,5 @@
 // left
-.ui.fixed.vertical.inverted.sidebar.menu
+//.ui.fixed.vertical.inverted.sidebar.menu
 	a.active.item(href='/page/one')
 		i.left.icon.star
 		| One1
@@ -8,25 +8,22 @@
 		| Two
 
 // top
-.ui.fixed.inverted.menu
-	.ui.container
-		a.toc.item
-			i.sidebar.icon
-		.header.item Narwhal Hosting
-		a.header.item(href='/page/one')
-			//-img.logo(src='/assets/images/logo.svg')
-			//-| &nbsp;
-			| Onex
-		a.item.computer_only(href='/page/two') Two
-
+#topMenu.ui.pointing.inverted.menu
+	a.toc.item
+		i.sidebar.icon.bars
+	.item Narwhal
+	a.item.active(href='/page/one') Home
+	a.item
+		| Messages
+	a.item
+		| Friends
 
 	.right.menu
-		a.item#Mlogin.ui.inverted.button Log In
-		a.item#MlogOut.ui.inverted.button Log Out
-		a.item#MsignUp.ui.inverted.button Sign Up
-
-
-
+		.item
+			.ui.buttons
+				#Mlogin.ui.inverted.button.tiny.compact Log In
+				#MlogOut.ui.inverted.button.tiny.compact Log Out
+				#MsignUp.ui.inverted.button.tiny.compact Sign Up
 
 //.ui.inverted.menu
 	a.active.item(href='/home') Home
@@ -36,3 +33,10 @@
 	a.item(href='/member/tryInstall')  Try it
 	a#MmemberHome.item(href='/register/memberHome') Member
 	a.item(href='/home') About
+
+style.
+	#topMenu {
+		margin: 0;
+		border-radius: 0;
+
+	}
