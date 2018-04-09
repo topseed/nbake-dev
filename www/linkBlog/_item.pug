@@ -1,13 +1,13 @@
 
 .item
-	h2 #{title}
-	h4 #{author}
-		#date1 {{=it.dateX}}
+	h2 #{ title}
+	h4 #{ author}
+		#date1 #{ date_modified}
 
-	img(src= media_url, height='160')
+	img(src= image , height='160')
 
-	div #{description}
-	a(href=sourceUrl, target='_blank') Click for more ...
+	div #{ content_text}
+	a(href= external_url, target='_blank') Click for more ...
 
 	p
 	p
@@ -17,7 +17,7 @@ script.
 	var cur = '#{id}'
 	console.log(cur)
 
-	loadjs.ready('dbind', function() {
+	loadjs.ready('xxx', function() {
 		// show the date
 		var local = moment.unix(#{updated}).local()
 		var dat = local.format('MMMM Do YYYY') // Z
@@ -34,8 +34,6 @@ script.
 		tmpl.innerHTML=res
 	}
 
-	loadjs.ready('PRELoadB', function() {
-		loadjs(['//cdn.jsdelivr.net/npm/moment@2.22.0/min/moment.min.js'
-		, '//cdn.jsdelivr.net/npm/dot@1.1.2/doT.min.js'
-		],'dbind')
+	loadjs.ready('core', function() {
+
 	})
