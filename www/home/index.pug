@@ -1,4 +1,4 @@
-extends /_chunk/_masterShell
+extends /plugin/_layout
 
 block head
 	title Narwhal Services
@@ -22,8 +22,6 @@ block main
 		.section.section1
 			// 'pg' one - with menu
 			.ui
-				// MENU - nested
-				include /_chunk/_TopMenu
 
 				// * content
 				.hero-image
@@ -87,9 +85,8 @@ block main
 					a.ui.large.button I'm Still Quite Interested
 
 			//FOOTER - nested
-			include /_chunk/_Footer
+			include  /plugin/_footer
 
-block scripts
-	script(src='/assets/ts/fullPg.js')
+	script(src='/assets/js/fullPg.js')
 	script.
 		console.log('pg')
