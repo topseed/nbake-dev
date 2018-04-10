@@ -1,6 +1,0 @@
-
-:8080 {
-	root www
-	gzip
-	log access.log
-}

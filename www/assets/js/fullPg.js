@@ -14,7 +14,6 @@ loadjs.ready('fullPage', function () {
 	console.log('onFullPage')
 	$('#fullPage').fullpage({
 		scrollOverflow: true,
-		s0crollOverflowReset: true,
 		bigSectionsDestination: top
 	 })
 })//()
