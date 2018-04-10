@@ -13,7 +13,7 @@
       "author": "Travis Neilson",
       "date_modified": 1522597131,
       "tags": null,
-      "url": "180401b_jade_bro"
+      "local_url": "180401b_jade_bro"
     },
     {
       "id": "28713ee7-c49f-476e-a395-50b5e74ec5ee",
@@ -23,7 +23,7 @@
       "content_text": "The awards for design, creativity and innovation on the Internet. Awwwards are the Website Awards that recognize and promote the talent and effort of the best developers, designers and web agencies in the world.",
       "author": "awwwards.com",
       "date_modified": 1522597132,
-      "url": "180401b_jade_bro"
+      "local_url": "180401d_awwwards"
     },
     {
       "id": "211d6fcb-932a-48e0-81cb-e40a37c0f417",
@@ -34,7 +34,7 @@
       "author": "chris coyier",
       "date_modified": 1522799218,
       "tags": null,
-      "url": "180403a_chriscoyier"
+      "local_url": "180403a_chriscoyier"
     },
     {
       "id": "a31fc60c-1ca9-4b3a-84a3-86285a46f1cf",
@@ -45,7 +45,7 @@
       "author": "crna cura",
       "date_modified": 1522799220,
       "tags": null,
-      "url": "180403b_mary_lou"
+      "local_url": "180403b_mary_lou"
     },
     {
       "id": "f08e7360-d408-41f2-8c1b-12e80d6cf6c6",
@@ -56,7 +56,7 @@
       "author": "webbyawards",
       "date_modified": 1522597134,
       "tags": null,
-      "url": "180403c_webbyawards"
+      "local_url": "180403c_webbyawards"
     },
     {
       "id": "34d8c130-f22f-4045-94fa-5f2e00fc1f04",
@@ -67,7 +67,7 @@
       "author": "favorite website awards",
       "date_modified": 1522597140,
       "tags": null,
-      "url": "180403d_fwa"
+      "local_url": "180403d_fwa"
     }
   ]
 }
