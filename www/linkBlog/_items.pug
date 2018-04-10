@@ -10,17 +10,17 @@ p
 p
 
 script.
-	loadjs.ready('PRELoadB', function() { // wait for fetch to be loaded
+	loadjs.ready('core', function() { // wait for fetch to be loaded
 		fetch('items.json').then(function(resp) {
 			return resp.json()
 		}).then(function(obj) {
 			feed = obj //data
-			loadjs.done('feed')
+			loadjs.done('items')
 		})
 	})// fetch data
 
 	// loaded lib and got data
-	loadjs.ready(['dbind','feed'], function() {
+	loadjs.ready(['tag','items'], function() {
 		console.log('dbind')
 
 		let itemsTag = riot.mount('items-tag')[0] // the first tag
@@ -37,15 +37,14 @@ script.
 		})
 	})//ready
 
-	loadjs.ready('PRELoadB', function() {
+	loadjs.ready('site', function() {
 		loadjs([
 			'//cdn.jsdelivr.net/npm/moment@2.22.0/min/moment.min.js'
-		, '//cdn.jsdelivr.net/npm/riot@3.9.1/riot.js'
 		, 'items-tag.js'
 		, '//cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js'
 		, '//cdn.jsdelivr.net/npm/paginationjs@2.1.2/dist/pagination.min.js'
 		, '//cdn.jsdelivr.net/npm/paginationjs@2.1.2/dist/pagination.css'
-		],'dbind', {
+		],'tag', {
 			async: false
 		})//load js
 	})//ready
