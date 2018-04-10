@@ -4,43 +4,9 @@ block head
 	title Narwhal Services
 
 block main
-	style.
-		.hero-image {
-			background-image: url('2.jpg');
-			background-size: cover;
-			background-position: center;
-			min-height: 70vh;
-
-		}
-
-		.headline1 {
-			padding-top: 35%;
-			padding-left: 65%;
-		}
-
 	#fullPage
 		.section.section1
-			// 'pg' one
-			.ui.hero-image
-					.ui.text.container
-						.headline1
-							h1.ui.inverted.header
-								| Webaps that matter,
-							p
-							br
-							p
-							h2.ui.inverted.header &nbsp;for 10X leaders.
-							.ui.huge.primary.button
-								| Get Started
-								i.right.arrow.icon
-
-			.ui.vertical.stripe.segment
-				.ui.middle.aligned.stackable.grid.container
-					.row
-						.eight.wide.column
-							h3.ui.header We Help Companies and Companions
-							p
-								| We can give your company superpowers to do things that they never thought possible.
+			include _s1
 
 		.section
 			// 'pg2'
@@ -48,20 +14,22 @@ block main
 				.ui.middle.aligned.stackable.grid.container
 					.row
 						.eight.wide.column
-							h3.ui.header We Make Bananas That Can Dance
-							p
-								| Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.
+							h3.ui.header We help you become a 10x Lead.
+							p.
+								Yes that's right, you thought it was the stuff of dreams,
+								but every decade the tech has improved 10 fold. We'll show you how to get you ahead.
+								Here is a web example from 2013.
 						.six.wide.right.floated.column
-							img.ui.large.bordered.rounded.image(src='assets/images/wireframe/white-image.png')
+							img.ui.large.bordered.rounded.image(src='gp.jpg')
 
 			.ui.vertical.stripe.quote.segment
 				.ui.equal.width.stackable.internally.celled.grid
 					.center.aligned.row
 						.column
-							h3 "What a Company"
+							h3 "They are markup experts"
 							p That is what they all say about us
 						.column
-							h3 "I shouldn't have gone with their competitor."
+							h3 "I shouldn have hosted on S3."
 							p
 								img.ui.avatar.image(src='assets/images/avatar/nan.jpg')
 								b Nan
@@ -69,8 +37,10 @@ block main
 			.ui.vertical.stripe.segment
 				.ui.text.container
 					h3.ui.header Breaking The Grid, Grabs Your Attention
-					p
-						| Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.
+					p.
+						We team up with you.
+						Even webmaster at interactive digital agency
+						needs a webmaster to support them. That is where we come in.
 
 		//ending
 		.section.sectionEnd
@@ -79,10 +49,10 @@ block main
 				h4.ui.horizontal.header.divider
 						a(href='#') Case Studies
 				.ui.text.container
-					h3.ui.header Did We Tell You About Our Bananas?
-					p
-						| Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.
-					a.ui.large.button I'm Still Quite Interested
+					h3.ui.header Did We Tell You that we help you be a 10X lead?
+					p.
+						Yes I know you probably disregarded the earlier boasts, but its true.
+					a.ui.large.button I'm Interested
 
 			//FOOTER - nested
 			include  /plugin/_footer
