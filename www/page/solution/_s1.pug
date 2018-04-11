@@ -5,13 +5,82 @@ p
 br
 
 p.
-	tell a story
-	interactive
-	gesture
 
-	s3
-	pug
-	
+	10X, Is that a thing?
+	No one will migrate from WordPress for something that is at least 2 times better. The staff is already
+	comfortable working around it.
+
+
+	We get better tech every decade. Assebmly was 10x better than machine langauge.
+	https://en.wikipedia.org/wiki/First-generation_programming_language . Procedural Algol programing
+	was 10X better than Assembly. Organizations were compled to upgrade to avoid extinction. Every
+	10 years we get more abastract. Today, WordPress(WP) and LAMP (Linux OS, Apache HTTPServer, MySQL DB and PHP )
+	are dominant, vast majority of Web runs LAMP. But... we had about 10 years of WP/LAMP. Will you convert? Ans:
+	You won't have a choice. Here is the incremental things thaat add up to 10X.
+
+	Static Files Markuped in Cloud with API. New can be scary.
+
+	- Insead of DB based, File based, hosted on S3 Cloud.
+		S3 easily hosts petabytes, for WWW scale. But that is not the main benefit. When hosting in DB, you create tables
+		that point to images, that are stored as files. It is very easy to lose the pointing to the media file, so the
+		system loses track of images. We have all seen image missing error messages, common for LAMP.
+		So instead of just storing imgaes and media in a page's folder - staticgen.com has a text file called meta that stores
+		DB fields, similar to how we store RSS. Becuase the page folder contains media and data fileds, bitrot is eliminated, and
+		cost of maitenenace is signigifcantly reduced. Do you realy want to mitigate security at container level? So instead of LAM of LAMP, we have Cloud and S3.
+
+		You upload (such as FTP) you html folder to S3 that have pages and media plus data fields. No DB.
+		No http server. No operating system. 10X less security managmnet.
+
+	- No HTML! Default markup for Node HTTP servers such as 'Express' is not HTML.
+	 Remember HTML? You'd write it in PHP, JSP, ASP, Grails, Rails, Django, etc. Even editors using WP
+	 Admin tool would write HTML. Opening and closing tags in WP. You are open to not close a tag properly
+	 or not nest properly. Lots of pain was had by all.
+	 An incrimental approval was MarkDown. If you have used Git, you must have used markdown. It is a way to genrate safe
+	 HTML. Most CMS today use Markdown. But it was liminted in layout. So most CMS have a few layouts, the age of WP.
+	 So we need a safe auto closing version of Markdown, full Markup that is not limited in any way.
+	 Pug.
+	 Default for Node HTTP Servers such as 'Express' is Pug.
+	 Pug generates full HTML. But with auto nesting and auto closing. It is a easier higher level abstraction.
+	 Most people know some HTML, and this is just an easy/auto version of HTML. Auto-closing is like automatic memory mangagment,
+	 something that once was done by programmers - and it was error prone. And it liminted the complexity
+	 of business solutions, since you had to focus on memory mangment. It was a thing.
+	 We even eschew javascript, programming is considered harmfull.
+
+	 So we use Pug as Decleartaive Langunage. Just like SQL is declerative - you say what you want. Just like HTML is declerative,
+	 you say what you want it to look like. Those are 3 decleartive lanugages. Older lanungaes such as Algol based are
+	  procedural or functional, for example Java or JavaScript. They are not declerative, like Pug.
+
+	These two things are main tentants of the modren staticaly generated approach
+
+	- Backendless, Baas, API. So no DB is not an issue when you create a dynamic WebApp, becuase you are backendless. API's and
+	Mircoservices are a thing!
+	For example, AWS Cognito is an cost effective API based Auth service. There are many microservices and apis.
+	You can search for some of the APIs at programmableweb.com. So this last one is the very disruptive, and
+	a bit hard to grasp: you don't need back end or even full stack programmers. 0. You are backendless.
+	Worst case you write a bit of Lambda - that auto scales.
+
+	- Native mobile first, in Pug. No IOS or Andorid development is needed.
+	PhoneGap and Cordova compilers have advanced, they now compile a faster WebKit. It can be as easy as clicking a button
+	to deploy to IOS and Andorid app stores, without instaling XCode or Andorid SDK. There are even reflex based games
+	writen in Cordova (HTML/Pug), that is how fast it is, 30FPS and faster. No need to belive this, when you can
+	test it. (OK, yes, there are some old devices with old CPU running old versions of OS, but then again, there
+	is IE11 and we work around that)
+
+	Will people still look for way to use old ways? Yes, people still look for how to use Minicomputers.
+
+	So, how should you use 10X?
+
+	10X means that you can do things in 4 hours, what used to take 2 weeks. A prediction is that you won't use the time
+	to do more, but you'll use time to do better. People will make webapps that are more interactive, more engaging:
+	Webapps will be used to tell the story better.
+
+	Also, 4 day work week is a thing.
+
+
+	For example, there will be more gesture based apps, like FlipBoard or Tinder. Do you like that effect of usiing
+	FlipBoard, and the page folds? Yeah, we show you how to do that.
+
+
 
 .ui.text.container
 	h3.ui.header  So lets tell you more.
