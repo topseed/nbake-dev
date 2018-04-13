@@ -1,0 +1,32 @@
+
+
+.ui.text.container
+
+	h3 When did this idea get started?
+
+	h4 I'll let you guess, this is a website, what year was it built?
+
+	video#vid1.video-js(  loop, muted, autoplay,  data-setup='{"fluid": true}', width='640', height='264')
+		source(src='arc.mp4', type='video/mp4')
+
+
+
+script.
+	loadjs.ready(['videoJs','site'], function () {// load data
+
+		var player1 = videojs('vid1', {}, function onPlayerReady() {
+			videojs.log('Your player is ready!')
+			//this.play()
+			//this.currentTime(53)
+		}) // player
+
+	})//ready
+
+	loadjs.ready(['core'], function () {// load data
+		// http://codepen.io/onigetoc/pen/KWqOwd
+		loadjs(['//vjs.zencdn.net/6.6.3/video-js.css'
+			,'//vjs.zencdn.net/6.6.3/video.js'
+			], 'videoJs', {
+				async: false //required due to loadjs bug with bundles
+		})//load
+	})//ready
