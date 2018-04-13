@@ -1,7 +1,7 @@
 
 
 .ui.text.container
-
+	br
 	h3 When did this idea get started?
 
 	h4 I'll let you guess, this is a website, what year was it built?
@@ -10,16 +10,33 @@
 		source(src='arc.mp4', type='video/mp4')
 
 
+	p.
+		I think all websites and webapps should look at least like this.
+		When I saw it, I wanted to learn how to build complex webapps like that.
+		It was done in HTML.
+		New  key is to keep it simple, and one way is to use a markup that is self closing.
+	p.
+		The other key part is: unicorns. It has been said that managers or designers that code are unicorn.
+		But HTML is for everyone. It the 90s, managers would not use a spreadsheet. But that was before.
+
+
+
+	img.ui.image(src='vic.jpg')
+
+	p.
+		More about me, I wrote the first book on an front end framework called Struts.
+		When I strted, there was about 5 developers using Struts, but eventually millions of developers
+		went on leverage Sturts. Today, there are still sites that are Sturts based. I also work at Tivo,
+		Akamai, NASA and built a social network called 1UP for Ziff Davis. 
+
 
 script.
 	loadjs.ready(['videoJs','site'], function () {// load data
-
 		var player1 = videojs('vid1', {}, function onPlayerReady() {
-			videojs.log('Your player is ready!')
+			videojs.log('player1')
 			//this.play()
 			//this.currentTime(53)
 		}) // player
-
 	})//ready
 
 	loadjs.ready(['core'], function () {// load data
