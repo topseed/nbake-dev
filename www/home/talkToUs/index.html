@@ -20,11 +20,10 @@
 	.toc.item {
 		display: none !important;
 	}
-}</style><div class="pusher"><p></p><div class="ui text container"><br><p>Hello Page One!</p><script>loadjs.ready('style', function () {
-	console.log('page 1 component script here')
-})</script></div><script>loadjs.ready('style', function () {
-	console.log('page 1 script here')
-})</script></div><script>console.log('layout')
+}</style><div class="pusher"><p></p><div class="ui text container"><form class="grid-form"><fieldset><legend>Form Section</legend><div data-row-span="2"><div data-field-span="1"><label>Field 1</label><input type="text"></div><div data-field-span="1"><label>Field 2</label><input type="text"></div></div></fieldset></form><script>loadjs([ '/assets/css/gridforms/gridforms.css'
+], 'css3', {
+	async: false //required due to loadjs bug with bundles
+})</script></div></div><script>console.log('layout')
 
 loadjs.ready('site', function() {
 	//show a bit

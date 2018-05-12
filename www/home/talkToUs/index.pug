@@ -1,0 +1,21 @@
+extends /layout/_layout
+//- App Shell
+
+block head
+	//static binding ex:
+	title #{title}
+
+block main
+	p
+	br
+	p
+	.ui.text.container
+		include form
+
+
+block main
+	p
+	.ui.text.container
+		include form.pug
+
+
