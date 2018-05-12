@@ -1,4 +1,4 @@
-extends /_chunk/_masterShell
+extends /layout/_layout
 
 block head
 	title Narwhal Services
@@ -9,7 +9,7 @@ block main
 		.hero-image {
 			background-image: url('/assets/img/many.jpg');
 			background-size: cover;
-			background-position: center; 
+			background-position: center;
 			min-height: 70vh;
 
 		}
@@ -23,8 +23,6 @@ block main
 		.section.section1
 			// 'pg' one - with menu
 			.ui
-				// MENU - nested
-				include /_chunk/_TopMenu
 
 			// * content
 			.ui.container.text
@@ -74,9 +72,8 @@ block main
 					a.ui.large.button I'm Still Quite Interested
 
 			//FOOTER - nested
-			include /_chunk/_Footer
+			include /layout/_Footer
 
-block scripts
 	script(src='/assets/ts/fullPg.js')
 	script.
 		console.log('pg')
