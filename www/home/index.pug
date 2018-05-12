@@ -1,4 +1,4 @@
-extends /plugin/_layout
+extends /layout/_layout
 
 block head
 	title Narwhal Services
@@ -54,8 +54,8 @@ block main
 					a.ui.large.button I'm Interested
 
 			//FOOTER - nested
-			include  /plugin/_footer
+			include  /layout/_footer
 
-	script(src='/assets/js/fullPg.js')
+	script(src='/assets/js/fullPgSetup.js')
 	script.
 		console.log('pg')

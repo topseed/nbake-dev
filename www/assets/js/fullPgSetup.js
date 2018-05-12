@@ -2,9 +2,18 @@
 loadjs.ready('site', function () {
 	console.log('loading full page')
 	loadjs([
-		'//cdn.jsdelivr.net/npm/fullpage.js@2.9.6/dist/jquery.fullpage.css',
-		'//gitcdn.xyz/repo/alvarotrigo/fullPage.js/dev/vendors/scrolloverflow.js',
-		'//cdn.jsdelivr.net/npm/fullpage.js@2.9.6/dist/jquery.fullpage.js'
+		'//cdn.jsdelivr.net/npm/fullpage.js@2.9.7/dist/jquery.fullpage.css',
+		'//cdn.jsdelivr.net/npm/fullpage.js@2.9.7/vendors/scrolloverflow.min.js'
+	], 'fullPage1', {
+		async: false
+	})
+})
+
+
+loadjs.ready('fullPage1', function () {
+	console.log('loading full page')
+	loadjs([
+		'//cdn.jsdelivr.net/npm/fullpage.js@2.9.7/dist/jquery.fullpage.js'
 	], 'fullPage', {
 		async: false
 	})
