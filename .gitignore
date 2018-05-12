@@ -1,50 +1,9 @@
-## ban all
 
-*
-!*/
-
-!.gitignore
-!*.editorconfig
-!README.md
-
-## except white list to
-# include (w/ ! prefix):
-
-!/www/assets/**
-!/dev/comps/**
-!/dev/admin/comps/**
-
-!**/*.less
-!**/*.scss
-!**/*.sass
-!**/*.pug
-!**/*.ts
-!**/*.md
-
-!**/*.ico
-!**/*.png
-!**/*.jpg
-
-!**/*.mp4
-
-!**/*.info
-!**/*.yaml
-
-!**/*.json
-
-!**/*.js
+node_modules/
 
 
-#other includes:
-
-!Wedgefile
-!package.json
-!gulpfile.js
-
-
-## over ride
-/node_modules/**
-**/.DS_Store
-**/Thumbs.db
 **/*.html
-/zold
+
+
+*.lock
+
