@@ -1,6 +1,5 @@
-# wordgrip-web
+# web
 
 
 
 
-mklink gui
