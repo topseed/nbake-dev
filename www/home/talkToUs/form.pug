@@ -2,31 +2,31 @@
 p
 
 h4.ui.dividing.header Talk to us
-#msgForm.ui.form
+form#msgForm.ui.form
 	.filed
 		.fields
 			.field
 				label Name
-				input(type='text', placeholder='Name')
+				input(type='text', name='name', placeholder='Name')
 		.fields
 			.field
 				label EMail
-				input(type='text', placeholder='me@gmail.com')
+				input(type='text', name='email', placeholder='me@gmail.com')
 			.field
 				label Phone Number
-				input(type='text', placeholder='917 555 1212')
+				input(type='text', name='phone', placeholder='917 555 1212')
 		.fields
 			.field
 				label City
-				input(type='text', placeholder='New York City')
+				input(type='text', name='city', placeholder='New York City')
 			.field
 				label Organization
-				input(type='text', placeholder='Omnicom Marketing')
+				input(type='text', name='org', placeholder='Omnicom Marketing')
 
 	.filed
 		label Message
 			.field
-				textarea(rows='2')
+				textarea(rows='3', name='msg' )
 	.filed
 		p
 			#msgBut.ui.button Send
@@ -34,6 +34,7 @@ h4.ui.dividing.header Talk to us
 script.
 	loadjs.ready('style', function () {
 		loadjs([ '//cdn.emailjs.com/dist/email.min.js'
+			,'//cdn.jsdelivr.net/npm/jquery-serializejson@2.8.1/jquery.serializejson.min.js'
 		], 'mailjs', {
 			async: false //required due to loadjs bug with bundles
 		}) //loadjs
@@ -42,8 +43,14 @@ script.
 	loadjs.ready('mailjs', function () {
 		emailjs.init('user_i6az3pB6xLKZe5q4XwtUb')
 		$('#msgBut').click(function(){
-			console.log('clicked')
-			emailjs.sendForm('default_service', 'msg1', '#msgForm')
+			let msg= $('#msgForm').serializeJSON();
+			console.log(msg)
+			emailjs.sendForm('default_service', 'msg2', 'msgForm')
+				.then(function(){
+					console.log('sent')
+				}, function(err) {
+					alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+				})
 			// thank you
 		})
 	})//()

@@ -20,8 +20,9 @@
 	.toc.item {
 		display: none !important;
 	}
-}</style><div class="pusher"><p></p><br><p></p><div class="ui text container"><p></p><h4 class="ui dividing header">Talk to us</h4><div class="ui form" id="msgForm"><div class="filed"><div class="fields"><div class="field"><label>Name</label><input type="text" placeholder="Name"></div></div><div class="fields"><div class="field"><label>EMail</label><input type="text" placeholder="me@gmail.com"></div><div class="field"><label>Phone Number</label><input type="text" placeholder="917 555 1212"></div></div><div class="fields"><div class="field"><label>City</label><input type="text" placeholder="New York City"></div><div class="field"><label>Organization</label><input type="text" placeholder="Omnicom Marketing"></div></div></div><div class="filed"><label>Message<div class="field"><textarea rows="2"></textarea></div></label></div><div class="filed"><p><div class="ui button" id="msgBut">Send</div></p></div></div><script>loadjs.ready('style', function () {
+}</style><div class="pusher"><p></p><br><p></p><div class="ui text container"><p></p><h4 class="ui dividing header">Talk to us</h4><form class="ui form" id="msgForm"><div class="filed"><div class="fields"><div class="field"><label>Name</label><input type="text" name="name" placeholder="Name"></div></div><div class="fields"><div class="field"><label>EMail</label><input type="text" name="email" placeholder="me@gmail.com"></div><div class="field"><label>Phone Number</label><input type="text" name="phone" placeholder="917 555 1212"></div></div><div class="fields"><div class="field"><label>City</label><input type="text" name="city" placeholder="New York City"></div><div class="field"><label>Organization</label><input type="text" name="org" placeholder="Omnicom Marketing"></div></div></div><div class="filed"><label>Message<div class="field"><textarea rows="3" name="msg"></textarea></div></label></div><div class="filed"><p><div class="ui button" id="msgBut">Send</div></p></div></form><script>loadjs.ready('style', function () {
 	loadjs([ '//cdn.emailjs.com/dist/email.min.js'
+		,'//cdn.jsdelivr.net/npm/jquery-serializejson@2.8.1/jquery.serializejson.min.js'
 	], 'mailjs', {
 		async: false //required due to loadjs bug with bundles
 	}) //loadjs
@@ -30,11 +31,17 @@
 loadjs.ready('mailjs', function () {
 	emailjs.init('user_i6az3pB6xLKZe5q4XwtUb')
 	$('#msgBut').click(function(){
-		console.log('clicked')
-		emailjs.sendForm('default_service', 'msg1', '#msgForm')
+		let msg= $('#msgForm').serializeJSON();
+		console.log(msg)
+		emailjs.sendForm('default_service', 'msg2', 'msgForm')
+			.then(function(){
+				console.log('sent')
+			}, function(err) {
+				alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+			})
 		// thank you
 	})
-})//()</script><p></p><br><p>oh hi</p><div class="ui icon message"><i class="inbox icon"></i><div class="content"><div class="header">Message sent!</div><p>We will get right back to you.</p></div></div></div></div><script>console.log('layout')
+})//()</script><p></p><div class="ui icon message" id="sentMsg"><i class="inbox icon"></i><div class="content"><div class="header">Message sent!</div><p>We will get right back to you.</p></div></div></div></div><script>console.log('layout')
 
 loadjs.ready('site', function() {
 	//show a bit
