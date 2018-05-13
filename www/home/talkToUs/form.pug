@@ -1,19 +1,49 @@
 
 p
 
-form.grid-form
-	fieldset
-		legend Form Section
-		div(data-row-span='2')
-			div(data-field-span='1')
-				label Field 1
-				input(type='text')
-			div(data-field-span='1')
-				label Field 2
-				input(type='text')
+h4.ui.dividing.header Talk to us
+#msgForm.ui.form
+	.filed
+		lable Your Info
+			.fields
+				.field
+					label Name
+					input(type='text', placeholder='Name')
+			.fields
+				.field
+					label EMail
+					input(type='text', placeholder='me@gmail.com')
+				.field
+					label Phone Number
+					input(type='text', placeholder='917 555 1212')
+			.fields
+				.field
+					label City
+					input(type='text', placeholder='New York City')
+				.field
+					label Organization
+					input(type='text', placeholder='Omnicom Marketing')
+	.filed
+		lable Message
+			.field
+				textarea(rows='2')
+	.filed
+		#msgBut.ui.button Send
 
 script.
-	loadjs([ '/assets/css/gridforms/gridforms.css'
-	], 'css3', {
-		async: false //required due to loadjs bug with bundles
-	})
+	loadjs.ready('style', function () {
+		loadjs([ '//cdn.emailjs.com/dist/email.min.js'
+		], 'mailjs', {
+			async: false //required due to loadjs bug with bundles
+		}) //loadjs
+	})// ready
+
+	loadjs.ready('mailjs', function () {
+		emailjs.init('user_i6az3pB6xLKZe5q4XwtUb')
+		$('#msgBut').click(function(){
+			emailjs.sendForm('default_service', 'msg1', '#msgForm')
+			// thank you
+		})
+	})//()
+
+
