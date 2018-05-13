@@ -4,31 +4,32 @@ p
 h4.ui.dividing.header Talk to us
 #msgForm.ui.form
 	.filed
-		lable Your Info
-			.fields
-				.field
-					label Name
-					input(type='text', placeholder='Name')
-			.fields
-				.field
-					label EMail
-					input(type='text', placeholder='me@gmail.com')
-				.field
-					label Phone Number
-					input(type='text', placeholder='917 555 1212')
-			.fields
-				.field
-					label City
-					input(type='text', placeholder='New York City')
-				.field
-					label Organization
-					input(type='text', placeholder='Omnicom Marketing')
+		.fields
+			.field
+				label Name
+				input(type='text', placeholder='Name')
+		.fields
+			.field
+				label EMail
+				input(type='text', placeholder='me@gmail.com')
+			.field
+				label Phone Number
+				input(type='text', placeholder='917 555 1212')
+		.fields
+			.field
+				label City
+				input(type='text', placeholder='New York City')
+			.field
+				label Organization
+				input(type='text', placeholder='Omnicom Marketing')
+
 	.filed
-		lable Message
+		label Message
 			.field
 				textarea(rows='2')
 	.filed
-		#msgBut.ui.button Send
+		p
+			#msgBut.ui.button Send
 
 script.
 	loadjs.ready('style', function () {
@@ -41,6 +42,7 @@ script.
 	loadjs.ready('mailjs', function () {
 		emailjs.init('user_i6az3pB6xLKZe5q4XwtUb')
 		$('#msgBut').click(function(){
+			console.log('clicked')
 			emailjs.sendForm('default_service', 'msg1', '#msgForm')
 			// thank you
 		})
