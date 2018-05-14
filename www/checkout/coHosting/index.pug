@@ -7,11 +7,11 @@ block head
 
 block main
 	p
+	br
+	p
 	.ui.text.container
-		include _pinc
+		include form
 
-	script.
-		loadjs.ready('style', function () {
-			console.log('page 1 script here')
-		})
+		include sentThanks
+
 
