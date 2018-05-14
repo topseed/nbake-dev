@@ -8,7 +8,7 @@ html
 
 		block head
 		style.
-			html { opacity: 0.05; }
+			html { opacity: 0.01; }
 
 	body
 		script(src='/assets/js/setup.js')
@@ -25,18 +25,16 @@ html
 		script.
 			console.log('layout')
 
-			loadjs.ready('site', function() {
+			loadjs.ready('style', function() {
 				//show a bit
-				document.getElementsByTagName('html')[0].style.opacity = .1
+				document.getElementsByTagName('html')[0].style.opacity = .04
 			})
 
-			loadjs.ready('style', function() {
+			loadjs.ready('css2', function() {
 				setTimeout(function(){
 					document.getElementsByTagName('html')[0].style.opacity = 1
-					console.log(Date.now()-_start)//time to show
-				},1000/60)// 2 frames
-
+				},1000/30)
 				$('.ui.sidebar').sidebar('attach events', '.toc.item')
-
 			})//ready
+
 		link(rel='stylesheet', href='/assets/css/semantic1.css', onload='cssLoaded()')
