@@ -1,8 +1,13 @@
 
 p
 
-#sentMsg.ui.icon.message
-	i.inbox.icon
+#sentMsg.ui.message.hidden
+	i.icon.ion-ios-mail
 	.content
 		.header Message sent!
 		p We will get right back to you.
+
+script.
+	function msgSent() {
+		$('#sentMsg').show()
+	}

@@ -45,9 +45,11 @@ script.
 		$('#msgBut').click(function(){
 			let msg= $('#msgForm').serializeJSON();
 			console.log(msg)
+			hideForm()
 			emailjs.sendForm('default_service', 'msg2', 'msgForm')
 				.then(function(){
 					console.log('sent')
+					msgSent()
 				}, function(err) {
 					alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
 				})
@@ -55,4 +57,7 @@ script.
 		})
 	})//()
 
+	function hideForm() {
+		$('#msgForm').hide()
+	}
 

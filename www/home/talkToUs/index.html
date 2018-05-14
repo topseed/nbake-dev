@@ -33,15 +33,23 @@ loadjs.ready('mailjs', function () {
 	$('#msgBut').click(function(){
 		let msg= $('#msgForm').serializeJSON();
 		console.log(msg)
+		hideForm()
 		emailjs.sendForm('default_service', 'msg2', 'msgForm')
 			.then(function(){
 				console.log('sent')
+				msgSent()
 			}, function(err) {
 				alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
 			})
 		// thank you
 	})
-})//()</script><p></p><div class="ui icon message" id="sentMsg"><i class="inbox icon"></i><div class="content"><div class="header">Message sent!</div><p>We will get right back to you.</p></div></div></div></div><script>console.log('layout')
+})//()
+
+function hideForm() {
+	$('#msgForm').hide()
+}</script><p></p><div class="ui message h1idden" id="sentMsg"><i class="icon ion-ios-mail"></i><div class="content"><div class="header">Message sent!</div><p>We will get right back to you.</p></div></div><script>function msgSent() {
+	$('#sentMsg').show()
+}</script></div></div><script>console.log('layout')
 
 loadjs.ready('site', function() {
 	//show a bit
